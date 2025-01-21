@@ -9,7 +9,7 @@ export default function CourseInfo() {
             <h1 className="2xl:text-5xl text-xl md:text-4xl">
               PERCORSO COMPLETO
             </h1>
-            <ul className="text-[14px] 2xl:text-3xl md:text-2xl text-xl list-disc md:pl-16 pl-8 text-left py-3">
+            <ul className="text-[14px] 2xl:text-3xl md:text-2xl text-base list-disc md:pl-16 pl-8 text-left py-3">
               <li>40 ORE DI FORMAZIONE</li>
               <li>10 LEZIONI PRATICHE</li>
               <li>CONFRONTO CON CONSULENTI DEL LAVORO E IMPRENDITORI</li>
@@ -24,7 +24,7 @@ export default function CourseInfo() {
       <CourseInfoCard
         content={
           <div>
-            <p className="text-xl md:text-4xl sm:text-[40px] 2xl:text-[45px] pt-6">
+            <p className="text-xl md:text-4xl sm:text-[38px] 2xl:text-[45px] pt-6">
               SCEGLI LA GIORNATA FORMATIVA PIU’ ADATTA ALLE TUE ESIGENZE E
               PARTECIPA AL MEETING
             </p>
