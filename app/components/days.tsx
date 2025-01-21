@@ -13,7 +13,7 @@ export default function Days() {
       image: "/bookSchema.png",
     },
     {
-      text: "Academy interna: progetto formativo, docenti, materiale formativo, vedinta",
+      text: "Academy interna: progetto formativo, docenti, materiale formativo, vendita",
       image: "/academySchema.png",
     },
     {
@@ -29,7 +29,7 @@ export default function Days() {
       image: "/hrSchema.png",
     },
     {
-      text: "Prevenire e gestire: ilcontenzioso aziendale",
+      text: "Prevenire e gestire: il contenzioso aziendale",
       image: "/scaleSchema.png",
     },
     {
@@ -41,7 +41,7 @@ export default function Days() {
       image: "/savingsSchema.png",
     },
     {
-      text: "Budget del personale:investire sul capitale umano",
+      text: "Budget del personale: investire sul capitale umano",
       image: "/budgetSchema.png",
     },
     {
@@ -84,7 +84,7 @@ export default function Days() {
   }, []);
 
   return (
-    <div className="bg-customGreen flex flex-col 2xl:flex-row py-24">
+    <div className="bg-customGreen flex flex-col 2xl:flex-row py-24 h-[1200px]">
       <div className="h-full 2xl:w-[30%] w-full flex 2xl:flex-col md:flex-row flex-col items-center justify-evenly whitespace-nowrap md:py-12">
         <InfoBall days={10} text="Giornate Formative" />
         <InfoBall days={40} text="Ore di Formazione" />

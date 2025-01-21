@@ -12,7 +12,7 @@ export default function DayCard({ text, image }: DayCardProps) {
         className="w-[90%] h-[60%] object-cover mb-4"
       />
       <div className="w-full flex items-center justify-center px-2 h-[40%] overflow-hidden">
-        <h3 className="text-customBlue xl:text-3xl md:text-xl text-base text-center md:p-6 p-2">
+        <h3 className="text-customBlue xl:text-4xl md:text-xl text-base text-center md:p-6 p-2">
           {text}
         </h3>
       </div>
