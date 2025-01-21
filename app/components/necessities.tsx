@@ -10,7 +10,7 @@ export default function Necessities() {
   ];
 
   return (
-    <div className="w-full h-[90vh] bg-customGreen flex flex-col items-center justify-center text-customBlue relative">
+    <div className="w-full h-[900px] bg-customGreen flex flex-col items-center justify-center text-customBlue relative">
       {items.map((item, index) => (
         <NecessityItem key={index} text={item} />
       ))}

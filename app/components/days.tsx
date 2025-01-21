@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import DayCard from "./dayCard";
 import InfoBall from "./infoBall";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
@@ -51,23 +51,36 @@ export default function Days() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  const resetTimer = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+    intervalRef.current = setInterval(() => {
+      handleNext();
+    }, 5000);
+  };
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % dayCards.length);
+    resetTimer();
   };
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? dayCards.length - 1 : prevIndex - 1
     );
+    resetTimer();
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      handleNext();
-    }, 5000); // Cambia slide ogni 5 secondi
-
-    return () => clearInterval(interval); // Pulisce l'intervallo quando il componente viene smontato
+    resetTimer();
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
   }, []);
 
   return (
