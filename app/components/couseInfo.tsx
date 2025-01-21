@@ -24,7 +24,7 @@ export default function CourseInfo() {
       <CourseInfoCard
         content={
           <div>
-            <p className="text-xl md:text-4xl sm:text-[38px] 2xl:text-[45px] pt-6">
+            <p className="text-xl md:text-3xl sm:text-[35px] 2xl:text-[45px] pt-6">
               SCEGLI LA GIORNATA FORMATIVA PIU’ ADATTA ALLE TUE ESIGENZE E
               PARTECIPA AL MEETING
             </p>

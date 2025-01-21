@@ -1,21 +1,38 @@
+"use client";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 
 export default function Header() {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header
-      className="relative p-4  md:h-[90vh] h-[80vh] bg-cover bg-center"
+      className="relative p-4 md:h-[90vh] h-[80vh] bg-cover bg-center"
       style={{ backgroundImage: "url('/bigMeeting.png')" }}
     >
       <div className="absolute inset-0 bg-white opacity-50 blur-lg"></div>
       <div className="relative z-10 flex text-2xl items-center justify-end">
         <div className="flex space-x-4 md:text-base lg:text-2xl text-xs">
-          <button className="bg-transparent text-customBlue px-4 py-2 rounded-lg uppercase underline">
+          <button
+            className="bg-transparent text-customBlue px-4 py-2 rounded-lg uppercase underline"
+            onClick={() => scrollToSection("team-section")}
+          >
             Il team
           </button>
-          <button className="bg-transparent text-customBlue px-4 py-2 rounded-lg uppercase underline">
+          <button
+            className="bg-transparent text-customBlue px-4 py-2 rounded-lg uppercase underline"
+            onClick={() => scrollToSection("necessities")}
+          >
             Il Nostro servizio per noi
           </button>
-          <button className="bg-transparent text-customBlue px-4 py-2 rounded-lg uppercase underline">
+          <button
+            className="bg-transparent text-customBlue px-4 py-2 rounded-lg uppercase underline"
+            onClick={() => scrollToSection("invest")}
+          >
             Investi nella tua azienda
           </button>
         </div>
