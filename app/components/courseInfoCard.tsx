@@ -15,7 +15,7 @@ export default function CourseInfoCard({
       <div className="relative  flex flex-col items-center justify-between h-full">
         {content}
         <div className="bg-customLightBlue w-full h-20 flex items-center justify-center text-customGray mt-4">
-          <h1 className="2xl:text-5xl text-4xl ">{price}</h1>
+          <h1 className="2xl:text-5xl md:text-4xl text-2xl">{price}</h1>
         </div>
       </div>
     </div>

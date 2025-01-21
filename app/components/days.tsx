@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DayCard from "./dayCard";
 import InfoBall from "./infoBall";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Days() {
   const dayCards = [
@@ -16,11 +17,11 @@ export default function Days() {
       image: "/academySchema.png",
     },
     {
-      text: "Strutturare il successo:organigrammi, mansionari eprocedure",
+      text: "Strutturare il successo: organigrammi, mansionari e procedure",
       image: "/meetingSchema.png",
     },
     {
-      text: "Benvenuti a bordo: politiche diInserimento e Uscita",
+      text: "Benvenuti a bordo: politiche di Inserimento e Uscita",
       image: "/employeeSchema.png",
     },
     {
@@ -61,6 +62,14 @@ export default function Days() {
     );
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 5000); // Cambia slide ogni 5 secondi
+
+    return () => clearInterval(interval); // Pulisce l'intervallo quando il componente viene smontato
+  }, []);
+
   return (
     <div className="bg-customGreen flex flex-col 2xl:flex-row py-24">
       <div className="h-full 2xl:w-[30%] w-full flex 2xl:flex-col md:flex-row flex-col items-center justify-evenly whitespace-nowrap md:py-12">
@@ -68,10 +77,21 @@ export default function Days() {
         <InfoBall days={40} text="Ore di Formazione" />
       </div>
       <div className="h-full 2xl:w-[70%] flex items-center justify-center relative px-8">
-        <DayCard
-          text={dayCards[currentIndex].text}
-          image={dayCards[currentIndex].image}
-        />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0, rotateY: 90 }}
+            animate={{ opacity: 1, rotateY: 0 }}
+            exit={{ opacity: 0, rotateY: -90 }}
+            transition={{ duration: 0.5 }}
+            className="w-full h-full flex items-center justify-center"
+          >
+            <DayCard
+              text={dayCards[currentIndex].text}
+              image={dayCards[currentIndex].image}
+            />
+          </motion.div>
+        </AnimatePresence>
         <button
           onClick={handlePrev}
           className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-transparent p-2 rounded-full hover:bg-gray-200"

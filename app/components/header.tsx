@@ -45,7 +45,10 @@ export default function Header() {
           ELEVATE YOUR BUSINESS WITH US
         </h2>
       </div>
-      <MdKeyboardDoubleArrowDown className="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-8xl text-customBlue mb-4 cursor-pointer" />
+      <MdKeyboardDoubleArrowDown
+        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-8xl text-customBlue mb-4 cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110 hover:text-customGreen"
+        onClick={() => scrollToSection("team-section")}
+      />
     </header>
   );
 }
