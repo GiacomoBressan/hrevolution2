@@ -3,6 +3,7 @@ import sendgrid from '@sendgrid/mail';
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY as string);
 
+
 export async function POST(req: NextRequest) {
   const { nome, cognome, email, telefono, message } = await req.json();
 
