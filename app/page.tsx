@@ -26,7 +26,7 @@ export default function Home() {
       number: 3,
       name: "Luca Rigoldi",
       description:
-        "Pugile professionista e speaker disuccesso renderà unica la vostraformazione. “INSEGUI LA TUA VISION ECONCRETIZZA LE OPPORTUNITA’” sarà il motto che lo guiderà nelsuo speech per voi",
+        "Pugile professionista e speaker di successo renderà unica la vostraformazione. “INSEGUI LA TUA VISION ECONCRETIZZA LE OPPORTUNITA’” sarà il motto che lo guiderà nelsuo speech per voi",
       image: "/lucaRigoldi.png",
     },
   ];
