@@ -1,34 +1,28 @@
-import { NextRequest, NextResponse } from "next/server";
-import sgMail from "@sendgrid/mail";
+import { NextRequest, NextResponse } from 'next/server';
+import sendgrid from '@sendgrid/mail';
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY || "");
-
-type FormData = {
-  nome: string;
-  cognome: string;
-  email: string;
-  telefono: string;
-};
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY as string);
 
 export async function POST(req: NextRequest) {
+  const { nome, cognome, email, telefono, message } = await req.json();
+
   try {
-    const { nome, cognome, email, telefono }: FormData = await req.json();
+    await sendgrid.send({
+      to: 'lau.croce@gmail.com', // Replace with your email
+      from: 'commerciale@cidielle.com', // Replace with your verified sender email
+      subject: 'Nuova richiesta di informazioni',
+      html: `
+        <p><strong>Nome:</strong> ${nome}</p>
+        <p><strong>Cognome:</strong> ${cognome}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Telefono:</strong> ${telefono}</p>
+        <p><strong>Messaggio:</strong> ${message}</p>
+      `,
+    });
 
-    const msg = {
-      to: "destinatario@example.com", // Sostituisci con l'indirizzo email del destinatario
-      from: "tuoemail@example.com",  // Sostituisci con il tuo indirizzo verificato su SendGrid
-      subject: "Nuova iscrizione ricevuta",
-      text: `Nome: ${nome}, Cognome: ${cognome}, Email: ${email}, Telefono: ${telefono}`,
-    };
-
-    await sgMail.send(msg);
-
-    return NextResponse.json({ success: true }, { status: 200 });
-  } catch (error: any) {
+    return NextResponse.json({ message: 'Email inviata con successo!' }, { status: 200 });
+  } catch (error) {
     console.error(error);
-    return NextResponse.json(
-      { success: false, error: error.message },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Errore durante l\'invio dell\'email.' }, { status: 500 });
   }
 }

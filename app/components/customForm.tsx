@@ -1,12 +1,14 @@
 "use client";
+
 import React, { useState, ChangeEvent, FormEvent } from "react";
 
-type FormData = {
+interface FormData {
   nome: string;
   cognome: string;
   email: string;
   telefono: string;
-};
+  message: string;
+}
 
 const CustomForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -14,9 +16,12 @@ const CustomForm: React.FC = () => {
     cognome: "",
     email: "",
     telefono: "",
+    message: "",
   });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ): void => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -45,15 +50,15 @@ const CustomForm: React.FC = () => {
   };
 
   return (
-    <div className="bg-customGreen h-[800px]">
-      <h1 className="2xl:text-5xl xl:text-4xl text-3xl h-[180px] text-customBlue font-bold text-center">
+    <div className="bg-customGreen h-[90vh] flex flex-col">
+      <h1 className="text-5xl h-[30vh] text-customBlue font-bold text-center">
         ISCRIVITI QUI E SAREMO A TUA DISPOSIZIONE
       </h1>
       <form
-        className="flex flex-col items-center bg-customGray w-full h-[620px] p-8 pt-24"
+        className="flex flex-col items-center bg-customGray w-full h-[70vh] p-8"
         onSubmit={handleSubmit}
       >
-        <div className="md:w-[50%] w-[80%] flex justify-between">
+        <div className="w-[50%] flex justify-between">
           <div className="flex flex-col w-[48%]">
             <label className="text-customBlue mb-2">Nome</label>
             <input
@@ -75,7 +80,7 @@ const CustomForm: React.FC = () => {
             />
           </div>
         </div>
-        <div className="md:w-[50%] w-[80%] flex flex-col mt-4">
+        <div className="w-[50%] flex flex-col mt-4">
           <label className="text-customBlue mb-2">Email</label>
           <input
             type="email"
@@ -85,7 +90,7 @@ const CustomForm: React.FC = () => {
             className="h-12 px-4 border-b-2 border-customBlue bg-transparent focus:outline-none"
           />
         </div>
-        <div className="md:w-[50%] w-[80%] flex flex-col mt-4">
+        <div className="w-[50%] flex flex-col mt-4">
           <label className="text-customBlue mb-2">Telefono</label>
           <input
             type="text"
@@ -95,9 +100,18 @@ const CustomForm: React.FC = () => {
             className="h-12 px-4 border-b-2 border-customBlue bg-transparent focus:outline-none"
           />
         </div>
+        <div className="w-[50%] flex flex-col mt-4">
+          <label className="text-customBlue mb-2">Messaggio</label>
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            className="h-24 px-4 border-b-2 border-customBlue bg-transparent focus:outline-none"
+          />
+        </div>
         <button
           type="submit"
-          className="md:w-[50%] w-[80%] h-12 bg-customBlue text-white font-bold text-xl mt-12"
+          className="w-[50%] h-12 bg-customBlue text-white font-bold text-xl mt-8"
         >
           Invia
         </button>
