@@ -26,7 +26,7 @@ export default function Home() {
       number: 3,
       name: "Luca Rigoldi",
       description:
-        "Pugile professionista e speaker di successo renderà unica la vostraformazione. “INSEGUI LA TUA VISION ECONCRETIZZA LE OPPORTUNITA’” sarà il motto che lo guiderà nelsuo speech per voi",
+        "Pugile professionista e speaker di successo renderà unica la vostraformazione. “INSEGUI LA TUA VISION E CONCRETIZZA LE OPPORTUNITÀ” sarà il motto che lo guiderà nel suo speech per voi",
       image: "/lucaRigoldi.png",
     },
   ];
@@ -49,7 +49,7 @@ export default function Home() {
         content={
           <div>
             <h1 className="text-base md:text-2xl lg:text-3xl xl:text-5xl">
-              IL NOSTRO SERVIZIO PER VOI - LE TUE NECESSITA’
+              IL NOSTRO SERVIZIO PER VOI - LE TUE NECESSITÀ
             </h1>
           </div>
         }

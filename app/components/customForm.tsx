@@ -58,7 +58,7 @@ const CustomForm: React.FC = () => {
         className="flex flex-col items-center bg-customGray w-full h-[70vh] p-8"
         onSubmit={handleSubmit}
       >
-        <div className="w-[50%] flex justify-between">
+        <div className="sm:w-[50%] w-[80%] flex justify-between">
           <div className="flex flex-col w-[48%]">
             <label className="text-customBlue mb-2">Nome</label>
             <input
@@ -80,7 +80,7 @@ const CustomForm: React.FC = () => {
             />
           </div>
         </div>
-        <div className="w-[50%] flex flex-col mt-4">
+        <div className="sm:w-[50%] w-[80%] flex flex-col mt-4">
           <label className="text-customBlue mb-2">Email</label>
           <input
             type="email"
@@ -90,7 +90,7 @@ const CustomForm: React.FC = () => {
             className="h-12 px-4 border-b-2 border-customBlue bg-transparent focus:outline-none"
           />
         </div>
-        <div className="w-[50%] flex flex-col mt-4">
+        <div className="sm:w-[50%] w-[80%] flex flex-col mt-4">
           <label className="text-customBlue mb-2">Telefono</label>
           <input
             type="text"
@@ -100,7 +100,7 @@ const CustomForm: React.FC = () => {
             className="h-12 px-4 border-b-2 border-customBlue bg-transparent focus:outline-none"
           />
         </div>
-        <div className="w-[50%] flex flex-col mt-4">
+        <div className="sm:w-[50%] w-[80%] flex flex-col mt-4">
           <label className="text-customBlue mb-2">Messaggio</label>
           <textarea
             name="message"

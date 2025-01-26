@@ -3,8 +3,8 @@ import NecessityItem from "./necessityItem";
 export default function Necessities() {
   const items = [
     "Strutturare l’organizzazione aumentando la produttività",
-    "Attirare e mantenere in azienda i talentigarantendo sicurezza e benessere",
-    "Pianificare gli investimenti e i costi per una gestionestrategica dell’azienda",
+    "Attirare e mantenere in azienda i talenti garantendo sicurezza e benessere",
+    "Pianificare gli investimenti e i costi per una gestione strategica dell’azienda",
     "Differenziarti sul mercato e offrire soluzioni innovative",
     "Approfondire nuove relazioni che ti permetteranno diarricchire la tua azienda",
   ];

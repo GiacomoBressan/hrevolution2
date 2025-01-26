@@ -25,7 +25,7 @@ export default function CourseInfo() {
         content={
           <div>
             <p className="text-xl md:text-3xl sm:text-[35px] 2xl:text-5xl pt-6 ">
-              SCEGLI LA GIORNATA FORMATIVA PIU’ ADATTA ALLE TUE ESIGENZE E
+              SCEGLI LA GIORNATA FORMATIVA PIÙ ADATTA ALLE TUE ESIGENZE E
               PARTECIPA AL MEETING
             </p>
           </div>

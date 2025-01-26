@@ -61,7 +61,7 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
             {slides[currentIndex].number}
           </motion.div>
         </AnimatePresence>
-        <div className="xl:w-[400px] lg:w-[320px] w-[300px]">
+        <div className="xl:w-[400px] lg:w-[320px] md:w-[290px] w-[270px]">
           <AnimatePresence mode="wait">
             <motion.h1
               key={currentIndex}
